@@ -1,0 +1,22 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Index</title>
+    <link href="./stylesheets/login.css" rel="Stylesheet" type="text/css" />
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+</head>
+<body>
+<% include header.ejs %>
+<div id="login-container">
+    <form id="form" action="./login" method="post">
+        <label>Username: &nbsp;</label>
+        <input type="text" name="Username" placeholder="Username" autocomplete="off" required><p style="color: red"><%= msg %></p><br><br>
+        <label>Password: &nbsp;</label>
+        <input type="password" id="txtPassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}" name="Password" readonly
+               onfocus="this.removeAttribute('readonly');" placeholder="Password (Example123!)" required><br><br>
+        <input class="center" type="submit" value="Login">
+
+    </form>
+</div>
+</body>
+</html>

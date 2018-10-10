@@ -1,0 +1,48 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Register</title>
+    <link href="./stylesheets/register.css" rel="Stylesheet" type="text/css" />
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+</head>
+<body>
+<% include header.ejs %>
+<div id="login-container">
+    <form id="form" action="./register" method="post">
+        <label>Username: &nbsp;</label>
+        <input type="text" name="Username" placeholder="Username" autocomplete="off" required><br><br>
+        <p style="color: red"><%= usrmsg %></p>
+        <label>Password: &nbsp;</label>
+        <input type="password" id="txtPassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}" name="Password" readonly
+               onfocus="this.removeAttribute('readonly');" placeholder="Password (Example123!)" required><br><br>
+        <label>Confirm Password: &nbsp;</label>
+        <input type="password" id="txtConfirmPassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}" name="Confirm-Password" readonly
+               onfocus="this.removeAttribute('readonly');" placeholder="Confirm Password" required><br><br>
+        <label>E-mail:&nbsp;</label>
+        <p style="color: red"><%= emailmsg %></p>
+        <input type="email" name="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Example@yahoo.com" required><br><br>
+        <%= code %>
+        <div class="g-recaptcha" data-sitekey="6Lf-GSMTAAAAAKvB6OED7wIOfUA_1zJ3Mf4TrtGq"></div>
+        <p style="color: red"><%= msg %></p>
+        <input class="center" type="submit" value="Register">
+
+    </form>
+</div>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $(".center").click(function () {
+            let password = $("#txtPassword").val();
+            let confirmPassword = $("#txtConfirmPassword").val();
+            if (password !== confirmPassword) {
+                alert("Passwords do not match.");
+                return false;
+            }
+            return true;
+        });
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+
+#chatbox {
+    margin: 0;
+    padding: 0;
+    height: 10vh;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+#chatbox #chatbox-form {
+    height: 100%;
+}
+
+#chatbox input[type=submit] {
+    background-color: #008CBA;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#chatbox input[type=submit]:hover {
+    background-color: #337ab7;
+}
+
+#chatbox input[type=text] {
+    background-color: #fafafa;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size:4vh;
+}
+
+#chatbox #text {
+    width: 80%;
+    height: 100%;
+}
+
+#chatbox #submit {
+    width: 20%;
+    height: 100%;
+    float: right;
+}
+
+ul {
+    list-style-type: none;
+}
+
+#messages li {
+    background: #f5f5f5;
+}
+
+/*#messages li:nth-of-type(2n) {*/
+    /*background: #f0f0f0;*/
+/*}*/
